@@ -76,7 +76,7 @@ const Map = () => {
               </Autocomplete>
             </div>
 
-            <label className="label-styles" htmlFor="destination">
+            <label className="label-styles mg-35" htmlFor="destination">
               Destination
             </label>
             <div>
@@ -91,7 +91,7 @@ const Map = () => {
               </Autocomplete>
             </div>
           </div>
-          <div>
+          <div className="btn-style">
             <div>
               <button className="calculate-btn" onClick={calculateRoute}>
                 Calculate
@@ -105,15 +105,19 @@ const Map = () => {
           </div>
         </div>
         <div className="data-recieved">
-          <div>
-            <p>Distance is {distance}</p>
+          <div className="distance-recieved">
+            <p>Distance </p>
+            <p className="dist-value">{distance}</p>
           </div>
-          <div>
-            <p>Duration is {duration}</p>
+          <div className="duration-recieved">
+            <p>Duration </p>
+            <p className="dur-value">{duration}</p>
           </div>
-          <div>
+          <div className="places-details">
             <p>
-              the distance between {place1} and {place2} is {distance}
+              The distance between <span className="bold-styles">{place1}</span>{" "}
+              and <span className="bold-styles">{place2}</span> is{" "}
+              <span className="bold-styles">{distance}</span>
             </p>
           </div>
         </div>
@@ -126,6 +130,7 @@ const Map = () => {
           mapContainerStyle={{
             height: "60vh",
             width: "40vw",
+            padding: "20px",
           }}
           //   onLoad={(map) => setMap(map)}
         >

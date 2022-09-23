@@ -4,9 +4,7 @@
   justify-content: space-evenly;
   align-items: center;
 }
-.input-class {
-  font-family: Rubik;
-}
+
 .calculate-btn,
 .clear-btn {
   background-color: #1b31a8;
@@ -31,7 +29,7 @@
 }
 .map-details {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 .data-recieved {
@@ -41,7 +39,7 @@
 .label-styles {
   position: relative;
   top: 30px;
-  right: 100px;
+  right: 115px;
   margin: 0 6px;
   font-family: "Work Sans";
   font-style: normal;
@@ -51,17 +49,73 @@
 }
 .pin-icon {
   position: relative;
-  top: 40px;
-  right: 110px;
+  top: 42px;
+  right: 115px;
   margin: 0 6px;
 }
 .input-styles {
   /* $neutralWhite */
+  font-family: Rubik;
   background: #ffffff;
   /* $blueGray50 */
   border: 1px solid #e9eef2;
-  padding: 15px 30px;
+  padding: 15px 35px;
   outline: none;
   font-size: 16px;
   border-radius: 4px;
+  color: #4d6475;
+}
+.distance-recieved,
+.duration-recieved,
+.places-details {
+  padding: 0 20px;
+  margin: 5px 0;
+  position: relative;
+  top: 20px;
+  width: 500px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.distance-recieved,
+.duration-recieved p {
+  font-size: 18px;
+  font-family: "Work Sans";
+}
+.places-details {
+  background-color: #f4f8fa;
+}
+.btn-style {
+  position: relative;
+  top: 25px;
+  left: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.dist-value,
+.dur-value {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 120%;
+  color: #1f89ff;
+  /* or 38px */
+
+  text-align: right;
+}
+.calculate-btn,
+.clear-btn {
+  font-family: "Work Sans";
+}
+.btn-style div {
+  margin: 0 20px;
+}
+.bold-styles {
+  font-weight: bold;
+}
+.mg-35 {
+  margin-left: 35px;
 }

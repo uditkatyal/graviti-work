@@ -14,7 +14,7 @@ const Header = () => {
 export default Header;
 
 const Graviti = Styled.div`
-   padding : 20px;
+   padding : 5px 50px;
    display: flex;
    justify-content: left;
    align-items: center;

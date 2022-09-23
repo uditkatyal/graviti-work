@@ -42,6 +42,8 @@
   flex: 1;
 }
 .tag-line {
+  position: relative;
+  top: 10px;
   letter-spacing: 1px;
   color: #1b31a8;
   font-family: "Work Sans", sans-serif;
