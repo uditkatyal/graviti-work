@@ -11,18 +11,24 @@ import { useState, useRef } from "react";
 import "./Map.css";
 
 const Map = () => {
+  // LOADING THE API
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
     libraries: ["places"],
   });
+  
+  // CONSIDERING CENTER AS EIFFEL TOWER (PARIS)
   const center = { lat: 48.8584, lng: 2.2945 };
   //   const [map, setMap] = useState(/**@type google.maps.Map */ null);
+  
+  // USESTATE 
   const [directionsResponse, setDirectionsResponse] = useState(null);
   const [distance, setDistance] = useState(null);
   const [duration, setDuration] = useState(null);
   const [place1, setPlace1] = useState(null);
   const [place2, setPlace2] = useState(null);
 
+  // USEREF
   /** @type React.MutableRefObject<HTMLInputElement> */
   const originRef = useRef();
   /** @type React.MutableRefObject<HTMLInputElement> */
@@ -30,16 +36,15 @@ const Map = () => {
 
   if (!isLoaded) return null;
 
+  // CALCULATE ROUTE
   async function calculateRoute() {
     if (originRef.current.value === "" || destinationRef.current.value === "") {
       return;
     }
-    // eslint-disable-next-line no-undef
     const directionsService = new google.maps.DirectionsService();
     const results = await directionsService.route({
       origin: originRef.current.value,
       destination: destinationRef.current.value,
-      // eslint-disable-next-line no-undef
       travelMode: google.maps.TravelMode.DRIVING,
     });
     setDirectionsResponse(results);
@@ -48,7 +53,7 @@ const Map = () => {
     setPlace1(results.routes[0].legs[0].start_address);
     setPlace2(results.routes[0].legs[0].end_address);
   }
-
+// CLEAR ROUTE
   function clearRoute() {
     setDirectionsResponse(null);
     setDistance("");
@@ -132,7 +137,6 @@ const Map = () => {
             width: "40vw",
             padding: "20px",
           }}
-          //   onLoad={(map) => setMap(map)}
         >
           <Marker position={center} />
           {directionsResponse && (
