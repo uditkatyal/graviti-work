@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@500&family=Work+Sans:wght@400;700&display=swap");
+.container-map-details {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.input-class {
+  font-family: Rubik;
+}
+.calculate-btn,
+.clear-btn {
+  background-color: #1b31a8;
+  color: #fff;
+  border-radius: 32px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height, or 125% */
+  padding: 10px 20px;
+  text-align: center;
+  border: 1px solid #1b31a8;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.calculate-btn:hover,
+.clear-btn:hover {
+  background-color: #fff;
+  color: #1b31a8;
+  border: 1px solid #1b31a8;
+}
+.map-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.data-recieved {
+  display: flex;
+  flex-direction: column;
+}
+.pin-icon {
+  position: relative;
+  top: 40px;
+  right: 110px;
+  margin: 0 6px;
+}
+.input-styles {
+  /* $neutralWhite */
+
+  background: #ffffff;
+  /* $blueGray50 */
+
+  border: 1px solid #e9eef2;
+  padding: 15px 30px;
+  outline: none;
+  font-size: 16px;
+  border-radius: 4px;
+}
