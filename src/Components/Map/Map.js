@@ -16,7 +16,7 @@ const Map = () => {
     libraries: ["places"],
   });
   const center = { lat: 48.8584, lng: 2.2945 };
-  const [map, setMap] = useState(/**@type google.maps.Map */ null);
+  //   const [map, setMap] = useState(/**@type google.maps.Map */ null);
   const [directionsResponse, setDirectionsResponse] = useState(null);
   const [distance, setDistance] = useState(null);
   const [duration, setDuration] = useState(null);
@@ -26,19 +26,19 @@ const Map = () => {
   /** @type React.MutableRefObject<HTMLInputElement> */
   const originRef = useRef();
   /** @type React.MutableRefObject<HTMLInputElement> */
-  const destiantionRef = useRef();
+  const destinationRef = useRef();
 
   if (!isLoaded) return null;
 
   async function calculateRoute() {
-    if (originRef.current.value === "" || destiantionRef.current.value === "") {
+    if (originRef.current.value === "" || destinationRef.current.value === "") {
       return;
     }
     // eslint-disable-next-line no-undef
     const directionsService = new google.maps.DirectionsService();
     const results = await directionsService.route({
       origin: originRef.current.value,
-      destination: destiantionRef.current.value,
+      destination: destinationRef.current.value,
       // eslint-disable-next-line no-undef
       travelMode: google.maps.TravelMode.DRIVING,
     });
@@ -54,7 +54,7 @@ const Map = () => {
     setDistance("");
     setDuration("");
     originRef.current.value = "";
-    destiantionRef.current.value = "";
+    destinationRef.current.value = "";
   }
   return (
     <div className="container-map-details">
@@ -68,7 +68,6 @@ const Map = () => {
               <img className="pin-icon" src={Pin} alt="" />
               <Autocomplete>
                 <input
-                  className="input-class"
                   for="origin"
                   type="text"
                   ref={originRef}
@@ -84,10 +83,9 @@ const Map = () => {
               <img className="pin-icon" src={Pin} alt="" />
               <Autocomplete>
                 <input
-                  className="input-class"
                   for="destination"
                   type="text"
-                  ref={destiantionRef}
+                  ref={destinationRef}
                   className="input-styles"
                 />
               </Autocomplete>
@@ -129,6 +127,7 @@ const Map = () => {
             height: "60vh",
             width: "40vw",
           }}
+          //   onLoad={(map) => setMap(map)}
         >
           <Marker position={center} />
           {directionsResponse && (
